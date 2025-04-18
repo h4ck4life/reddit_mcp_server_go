@@ -1,0 +1,2 @@
+- go mod tidy
+- go build -o reddit_mcp_server.exe
