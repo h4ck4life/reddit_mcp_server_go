@@ -198,7 +198,7 @@ func handleRedditPost(ctx context.Context, request mcp.CallToolRequest) (*mcp.Ca
 	postID = strings.TrimPrefix(postID, "t3_")
 
 	// Make the API call
-	result, err := makeRedditRequest(fmt.Sprintf("/api/info.json"), url.Values{"id": []string{"t3_" + postID}})
+	result, err := makeRedditRequest("/api/info.json", url.Values{"id": []string{"t3_" + postID}})
 	if err != nil {
 		return mcp.NewToolResultErrorFromErr("Reddit API error", err), nil
 	}
